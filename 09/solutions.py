@@ -57,7 +57,7 @@ for c1, c2 in tqdm(combinations(coordinates, 2)):
         next_coord = coordinates[idx + 1]
         line_min_y, line_max_y = sorted([coord[0], next_coord[0]])
         line_min_x, line_max_x = sorted([coord[1], next_coord[1]])
-        # если линия _полностью_ внутри прямоугольника, то внутри окажется белый пиксель
+        # если линия пересекает или внутри прямоугольника, то внутри окажется белый пиксель
         if min_y < line_max_y and max_y > line_min_y and min_x < line_max_x and max_x > line_min_x:
             valid = False
             break
